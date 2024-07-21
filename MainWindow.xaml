@@ -17,5 +17,13 @@
 
         <Border Grid.Column="0" Background="Gray"></Border>
         <Border Grid.Column="1" Background="White"></Border>
+
+        <StackPanel Grid.Column="1">
+            <GroupBox Header="Main information"></GroupBox>
+            <GroupBox Header="System information"></GroupBox>
+            <GroupBox Header="Parameters"></GroupBox>
+            <GroupBox Header="Selected bot"></GroupBox>
+            <GroupBox Header="Controls"></GroupBox>
+        </StackPanel>
     </Grid>
 </Window>
