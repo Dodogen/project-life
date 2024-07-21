@@ -24,5 +24,10 @@ namespace project_life
 		{
 			InitializeComponent();
 		}
+
+		private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
 	}
 }
