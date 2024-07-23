@@ -9,6 +9,12 @@
         Loaded="MainWindow_OnLoaded"
         Background="Purple">
 
+    <Window.Resources>
+        <Style x:Key="TextBlocksStyle">
+            <Setter Property="TextBlock.Margin" Value="0,0,10,0"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Name="FieldCell" Width="4*"/>
@@ -22,9 +28,36 @@
 
         <StackPanel Grid.Column="1">
             <GroupBox Header="Main information">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="">Steps</TextBlock>
-                    <TextBlock Width="">10000</TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Steps:</TextBlock>
+                        <TextBlock Name="StepsCountTextBlock">10000</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Speed:</TextBlock>
+                        <TextBlock Name="CurrentSpeedTextBlock">32 ticks/s</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Skip:</TextBlock>
+                        <TextBlock Name="SkippingFramesTextBlock">10 frames</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Season:</TextBlock>
+                        <TextBlock Name="CurrentSeasonTextBlock">Summer</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Daytime:</TextBlock>
+                        <TextBlock Name="CurrentDaytimeTextBlock">Night</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Objects:</TextBlock>
+                        <TextBlock Name="ObjectsCountTextBlock">10000</TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="System information"></GroupBox>
