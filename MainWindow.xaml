@@ -20,10 +20,12 @@
 
         <Style x:Key="GroupBoxStyle"  TargetType="GroupBox">
             <Setter Property="Padding" Value="0,5"/>
+            <Setter Property="Margin" Value="0,5"/>
         </Style>
 
         <Style x:Key="ControlButtonStyle"  TargetType="Button">
-            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Margin" Value="0,10,30,0"/>
         </Style>
 
 
@@ -108,7 +110,7 @@
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Season:</TextBlock>
-                        <TextBlock Name="SeasonTextBlock">Summer (change to combobox)</TextBlock> 
+                        <TextBlock Name="SeasonTextBlock">Summer (change to combobox)</TextBlock>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
@@ -124,41 +126,58 @@
             </GroupBox>
 
             <GroupBox Header="Selected bot" Style="{StaticResource GroupBoxStyle}">
-                <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal" Style="{StaticResource StackPanelRowsStyle}">
+                <StackPanel>
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Energy:</TextBlock>
                         <TextBlock Name="BotEnergyTextBlock">120</TextBlock>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Age:</TextBlock>
                         <TextBlock Name="BotAgeTextBlock">120 ticks</TextBlock>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Color:</TextBlock>
                         <TextBlock Name="BotColorTextBlock">Blue</TextBlock>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Nutrition:</TextBlock>
                         <TextBlock Name="BotNutritionTextBlock">Meat, Photosynthesis</TextBlock>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Genome:</TextBlock>
                         <TextBlock Name="BotGenomeTextBlock">32 15 (change to table</TextBlock>
                     </StackPanel>
+
+                    <Button 
+                        Name="SaveBotButton" 
+                        Content="Save" 
+                        Width="60" 
+                        Height="20"
+                        HorizontalAlignment="Left"
+                        Margin="0,5,0,0"/>
                 </StackPanel>
             </GroupBox>
-
+            
             <GroupBox Header="Controls" Style="{StaticResource GroupBoxStyle}">
                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button >Button 1</Button>
-                    <Button >Button 2</Button>
-                    <Button >Button 3</Button>
-                    <Button >Button 4</Button>
-                    <Button >Button 5</Button>
+                    <Button Content="Start/Stop" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="New" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="Save" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="Load" Style="{StaticResource ControlButtonStyle}"/>
                 </WrapPanel>
             </GroupBox>
         </StackPanel>
