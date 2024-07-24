@@ -1,4 +1,4 @@
-﻿namespace project_life.Models
+﻿namespace PL.Core.Models
 {
 	//use Singletone?
 	public class Field

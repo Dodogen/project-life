@@ -1,4 +1,4 @@
-﻿namespace project_life.Enumerations
+﻿namespace PL.Core.Enumerations
 {
 	public static class Seasons
 	{
