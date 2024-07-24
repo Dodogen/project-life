@@ -9,6 +9,28 @@
         Loaded="MainWindow_OnLoaded"
         Background="Purple">
 
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+
+        <Style x:Key="StackPanelRowsStyle" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,1"/>
+        </Style>
+
+        <Style x:Key="GroupBoxStyle"  TargetType="GroupBox">
+            <Setter Property="Padding" Value="0,5"/>
+            <Setter Property="Margin" Value="0,5"/>
+        </Style>
+
+        <Style x:Key="ControlButtonStyle"  TargetType="Button">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Margin" Value="0,10,30,0"/>
+        </Style>
+
+
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Name="FieldCell" Width="4*"/>
@@ -21,16 +43,165 @@
         <Image Name="FieldImage" Grid.Column="0" Source="Assets/earth.png"/>
 
         <StackPanel Grid.Column="1">
-            <GroupBox Header="Main information">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="">Steps</TextBlock>
-                    <TextBlock Width="">10000</TextBlock>
+            <GroupBox Header="Main information" Style="{StaticResource GroupBoxStyle}">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Steps:</TextBlock>
+                        <TextBlock Name="StepsCountTextBlock">10000</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Speed:</TextBlock>
+                        <TextBlock Name="CurrentSpeedTextBlock">32 ticks/s</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Skip:</TextBlock>
+                        <TextBlock Name="SkippingFramesTextBlock">10 frames</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Season:</TextBlock>
+                        <TextBlock Name="CurrentSeasonTextBlock">Summer</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Daytime:</TextBlock>
+                        <TextBlock Name="CurrentDaytimeTextBlock">Night</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Objects:</TextBlock>
+                        <TextBlock Name="ObjectsCountTextBlock">10000</TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="System information"></GroupBox>
-            <GroupBox Header="Parameters"></GroupBox>
-            <GroupBox Header="Selected bot"></GroupBox>
-            <GroupBox Header="Controls"></GroupBox>
+
+            <GroupBox Header="System information" Style="{StaticResource GroupBoxStyle}">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">OS:</TextBlock>
+                        <TextBlock Name="OsNameTextBlock">Windows 11</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">CPU:</TextBlock>
+                        <TextBlock Name="CpuModelTextBlock">Intel Core-i5</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">RAM:</TextBlock>
+                        <TextBlock Name="RamValueTextBlock">15.97 Gb</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Threads:</TextBlock>
+                        <TextBlock Name="ThreadsCountTextBlock">8</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Parameters" Style="{StaticResource GroupBoxStyle}">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Mutation chance:</TextBlock>
+                        <TextBlock Name="MutationChanceTextBlock">1 to 5</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Season:</TextBlock>
+                        <TextBlock Name="SeasonTextBlock">Summer (change to combobox)</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Color filter:</TextBlock>
+                        <TextBlock Name="ColorFilterTextBlock">Type(change to combobox)</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Daytime:</TextBlock>
+                        <TextBlock Name="DaytimeTextBlock">Night(change to combobox)</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Selected bot" Style="{StaticResource GroupBoxStyle}">
+                <StackPanel>
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Energy:</TextBlock>
+                        <TextBlock Name="BotEnergyTextBlock">120</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Age:</TextBlock>
+                        <TextBlock Name="BotAgeTextBlock">120 ticks</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Color:</TextBlock>
+                        <TextBlock Name="BotColorTextBlock">Blue</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Nutrition:</TextBlock>
+                        <TextBlock Name="BotNutritionTextBlock">Meat, Photosynthesis</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Style="{StaticResource StackPanelRowsStyle}">
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Genome:</TextBlock>
+                        <TextBlock Name="BotGenomeTextBlock">32 15 (change to table</TextBlock>
+                    </StackPanel>
+
+                    <Button 
+                        Name="SaveBotButton" 
+                        Content="Save" 
+                        Width="60" 
+                        Height="20"
+                        HorizontalAlignment="Left"
+                        Margin="0,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Controls" Style="{StaticResource GroupBoxStyle}">
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Start/Stop" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="New" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="Save" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button Content="Load" Style="{StaticResource ControlButtonStyle}"/>
+                </WrapPanel>
+            </GroupBox>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock 
+                    Grid.Column="0"  
+                    Style="{StaticResource TextBlockStyle}"
+                    TextAlignment="Right">
+                    Language:
+                </TextBlock>
+                <ComboBox 
+                    x:Name="CurrentLanguageCombobox" 
+                    Grid.Column="1" 
+                    Height="20"
+                    SelectedIndex="0">
+                    <TextBlock>EN</TextBlock>
+                    <TextBlock>RU</TextBlock>
+                </ComboBox>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
