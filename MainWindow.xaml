@@ -40,7 +40,7 @@
         <Border Grid.Column="0" Background="Gray"></Border>
         <Border Grid.Column="1" Background="White"></Border>
 
-        <Image Name="FieldImage" Grid.Column="0" Source="Assets/earth.png"/>
+        <Image Name="FieldImage" Grid.Column="0"/>
 
         <StackPanel Grid.Column="1">
             <GroupBox Header="Main information" Style="{StaticResource GroupBoxStyle}">
