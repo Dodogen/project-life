@@ -1,6 +1,7 @@
 ﻿namespace PL.Core.Enumerations
 {
-	public static class BotTypes
+	public enum BotTypes
 	{
+		 
 	}
 }

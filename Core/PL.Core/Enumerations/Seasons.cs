@@ -1,6 +1,6 @@
 ﻿namespace PL.Core.Enumerations
 {
-	public static class Seasons
+	public enum Seasons
 	{
 	}
 }
