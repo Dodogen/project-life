@@ -50,6 +50,7 @@
     <Compile Include="Enumerations\Directions.cs" />
     <Compile Include="Enumerations\NutritionMethods.cs" />
     <Compile Include="Enumerations\Seasons.cs" />
+    <Compile Include="Extensions\EnumerableExt.cs" />
     <Compile Include="Models\Bot.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\Genome.cs" />

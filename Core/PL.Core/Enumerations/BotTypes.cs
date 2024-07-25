@@ -5,6 +5,6 @@
 		Plant,
 		Animal,
 		Stone,
-		Corpse, 
+		Corpse,
 	}
 }

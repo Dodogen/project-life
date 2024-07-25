@@ -12,6 +12,7 @@ namespace PL.Core.Enumerations
 		Left,
 		BottomLeft,
 		Bottom,
+		NoDirection,
 	}
 
 	public static class DirectionsExtension
