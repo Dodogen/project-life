@@ -2,6 +2,9 @@
 {
 	public enum BotTypes
 	{
-		 
+		Plant,
+		Animal,
+		Stone,
+		Corpse, 
 	}
 }
