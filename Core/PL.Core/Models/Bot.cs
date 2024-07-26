@@ -12,6 +12,7 @@ namespace PL.Core.Models
 {
 	public class Bot
 	{
+		private Field _field;
 		private Point _coordinates;
 		private uint _energy; // gen randomly from 0 to 100
 		private uint _age = 0; // 0 from start
