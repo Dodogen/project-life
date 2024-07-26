@@ -2,6 +2,6 @@
 {
 	public static class BotConstants
 	{
-		public const uint GENOME_LENGTH = 64;
+		public const int GENOME_LENGTH = 64;
 	}
 }
