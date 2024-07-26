@@ -106,59 +106,59 @@ namespace PL.Core.Models
 			return source.PickRandom(len);
 		}
 
-		//methods
+		#region Bot commands
 
-		public void Move()
+		private void Move()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Mutate()
+		private void Mutate()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Eat()
+		private void Eat()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Photosynthesize()
+		private void Photosynthesize()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Ignore()
+		private void Ignore()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void CheckAround()
+		private void CheckAround()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Rotate()
+		private void Rotate()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void CreateChild()
+		private void CreateChild()
 		{
 			throw new NotImplementedException();
 		}
 
-		public bool TrySuicide()
+		private bool TrySuicide()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void StealGene()
+		private void StealGene()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void StealEnergy()
+		private void StealEnergy()
 		{
 			throw new NotImplementedException();
 		}
@@ -167,5 +167,6 @@ namespace PL.Core.Models
 		{
 			throw new NotImplementedException();
 		}
+		#endregion
 	}
 }
