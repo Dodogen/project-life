@@ -15,18 +15,18 @@ namespace PL.Core.Models
 		private Point _coordinates;
 		private uint _energy; // gen randomly from 0 to 100
 		private uint _age = 0; // 0 from start
-		private BotTypes _type; // Plant is default
+		private BotTypes _type; // UNUSED
 		private Color _color; // or green on mixed from parents
 		private Genome _genome;
 		private Directions _direction;
 		private List<NutritionMethods> _nutritionMethods;
+		private int _currentGenomePoint = 0;
 
 		public Bot(Point coords) // create default "plant"-bot
 		{
 			_coordinates = coords;
 			_energy = (uint)GetRandomNumber(0, 100);
-			_type = BotTypes.Plant;
-			_nutritionMethods = GetNutritionMethods(new [] {NutritionMethods.Photosynthesis}).ToList();
+			_nutritionMethods = GetNutritionMethods(new[] { NutritionMethods.Photosynthesis }).ToList();
 			_color = SetColor();
 			_genome = new Genome(BotConstants.GENOME_LENGTH);
 			_direction = Directions.NoDirection;
@@ -36,8 +36,8 @@ namespace PL.Core.Models
 		{
 			_coordinates = father._coordinates;
 			_energy = (father._energy + mother._energy) / 2;
-			_type = GetBotType(father, mother);
-			_nutritionMethods = GetNutritionMethods((father._nutritionMethods).Concat(mother._nutritionMethods)) .ToList();
+			_nutritionMethods = GetNutritionMethods((father._nutritionMethods).Concat(mother._nutritionMethods))
+				.ToList();
 			_color = SetColor();
 			_genome = new Genome(BotConstants.GENOME_LENGTH);
 			_direction = Directions.NoDirection;
@@ -49,12 +49,10 @@ namespace PL.Core.Models
 
 		private Color SetColor()
 		{
-			var uniqueMethods = _nutritionMethods.Distinct();
-			
 			//calculate relative step for every color
 			var step = (double)255 / _nutritionMethods.Count;
 
-			(double redSum, double greenSum, double blueSum) = (0,0,0);
+			(double redSum, double greenSum, double blueSum) = (0, 0, 0);
 			foreach (var method in _nutritionMethods)
 			{
 				switch (method)
@@ -84,7 +82,6 @@ namespace PL.Core.Models
 						break;
 					}
 
-
 					case (NutritionMethods.Omnivorous):
 					{
 						redSum += step;
@@ -108,23 +105,66 @@ namespace PL.Core.Models
 			return source.PickRandom(len);
 		}
 
-		private BotTypes GetBotType(Bot b1, Bot b2)
-		{
-			throw new NotImplementedException();
-		}
-
-		//depends on nutrition types
-		private Color CalculateColor(Bot b1, Bot b2)
-		{
-			throw new NotImplementedException();
-		}
-
 		//methods
-		//move
-		//setcolor(c1,c2)
-		//GetNutritionMethods(b1 b2)
-		//makeStep()
-		//destroy() of smth like
 
+		public void Move()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Mutate()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Eat()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Photosynthesize()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Ignore()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void CheckAround()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Rotate()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void CreateChild()
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool TrySuicide()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void StealGene()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void StealEnergy()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Next()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
