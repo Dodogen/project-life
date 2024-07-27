@@ -34,6 +34,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,8 @@
     <Compile Include="Enumerations\Directions.cs" />
     <Compile Include="Enumerations\NutritionMethods.cs" />
     <Compile Include="Enumerations\Seasons.cs" />
+    <Compile Include="Extensions\BitmapExt.cs" />
+    <Compile Include="Extensions\BitmapImageExt.cs" />
     <Compile Include="Extensions\EnumerableExt.cs" />
     <Compile Include="Extensions\MathExt.cs" />
     <Compile Include="Models\Bot.cs" />
