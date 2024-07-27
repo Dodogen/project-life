@@ -5,7 +5,6 @@ using System.Windows.Media.Imaging;
 using PL.Core.Constants;
 using PL.Core.Extensions;
 using Point = System.Windows.Point;
-using Color = System.Drawing.Color;
 
 namespace PL.Core.Models
 {
