@@ -6,12 +6,15 @@ using System.Windows.Media;
 using PL.Core.Constants;
 using PL.Core.Enumerations;
 using PL.Core.Extensions;
+using System.Drawing;
+using Color = System.Drawing.Color;
+using Point = System.Windows.Point;
+
 
 namespace PL.Core.Models
 {
 	public class Bot
 	{
-		private Field _field;
 		private Point _coordinates;
 		private uint _energy; // gen randomly from 0 to 100
 		private uint _age = 0; // 0 from start
@@ -22,10 +25,21 @@ namespace PL.Core.Models
 		private List<NutritionMethods> _nutritionMethods;
 		private int _currentGenomePoint = 0;
 
+		#region properties
+
+		public Point Coords=> _coordinates;
+		public uint Energy => _energy;
+		public uint Age => _age;
+		public Color Color => _color;
+		public Point MovementDirection => _direction.Value();
+		public IEnumerable<NutritionMethods> Nutrition => _nutritionMethods;
+
+		#endregion
+
 		public Bot(Point coords) // create default "plant"-bot
 		{
 			_coordinates = coords;
-			_energy = (uint)GetRandomNumber(0, 100);
+			_energy = (uint)(new Random().Next(0, 100));
 			_nutritionMethods = GetNutritionMethods(new[] { NutritionMethods.Photosynthesis }).ToList();
 			_color = SetColor();
 			_genome = new Genome(BotConstants.GENOME_LENGTH);
@@ -42,10 +56,6 @@ namespace PL.Core.Models
 			_genome = new Genome(BotConstants.GENOME_LENGTH);
 			_direction = Directions.NoDirection;
 		}
-
-
-		private int GetRandomNumber(int start, int inclusiveEnd) =>
-			new Random().Next(start, inclusiveEnd + 1);
 
 		private Color SetColor()
 		{
@@ -92,11 +102,13 @@ namespace PL.Core.Models
 				}
 			}
 
-			int r = (int)redSum.Clamp(0, 255);
-			int g = (int)greenSum.Clamp(0, 255);
-			int b = (int)blueSum.Clamp(0, 255);
+			//int r = (int)redSum.Clamp(0, 255);
+			//int g = (int)greenSum.Clamp(0, 255);
+			//int b = (int)blueSum.Clamp(0, 255);
 
-			return Color.FromRgb((byte)r, (byte)g, (byte)b);
+			//return Color.FromArgb(r,g, b);
+
+			return Color.FromArgb((int)redSum, (int)greenSum, (int)blueSum);
 		}
 
 		private IEnumerable<NutritionMethods> GetNutritionMethods(IEnumerable<NutritionMethods> source)
@@ -162,10 +174,10 @@ namespace PL.Core.Models
 			throw new NotImplementedException();
 		}
 
+		#endregion
 		public void Next()
 		{
 			throw new NotImplementedException();
 		}
-		#endregion
 	}
 }

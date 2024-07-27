@@ -5,6 +5,7 @@ using System.Windows.Media.Imaging;
 using PL.Core.Constants;
 using PL.Core.Extensions;
 using Point = System.Windows.Point;
+using Color = System.Drawing.Color;
 
 namespace PL.Core.Models
 {
@@ -78,7 +79,7 @@ namespace PL.Core.Models
 			{
 				var x = bot.Coords.X;
 				var y = bot.Coords.Y;
-				bmp.SetPixel(x,y, bot.Color);
+				bmp.SetPixel((int)x,(int)y, bot.Color);
 			}
 		}
 	}
