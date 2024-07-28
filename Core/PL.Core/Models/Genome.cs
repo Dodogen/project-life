@@ -30,7 +30,7 @@ namespace PL.Core.Models
 			_genes[new Random().Next(0, BotConstants.GENOME_LENGTH)] = new Random().Next(0, BotConstants.GENOME_LENGTH);
 		}
 
-		public int this[int i] => _genes[i];
+		public int this[int i] => _genes[i%_genes.Count];
 
 	}
 }

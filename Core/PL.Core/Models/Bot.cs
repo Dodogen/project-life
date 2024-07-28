@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
-using System.Windows.Media;
 using PL.Core.Constants;
 using PL.Core.Enumerations;
 using PL.Core.Extensions;
-using System.Drawing;
 using Color = System.Drawing.Color;
 using Point = System.Windows.Point;
 
@@ -23,11 +20,11 @@ namespace PL.Core.Models
 		private Genome _genome;
 		private Directions _direction;
 		private List<NutritionMethods> _nutritionMethods;
-		private int _currentGenomePoint = 0;
+		private int _currentGenomeNumber = 0;
 
 		#region properties
 
-		public Point Coords=> _coordinates;
+		public Point Coords => _coordinates;
 		public uint Energy => _energy;
 		public uint Age => _age;
 		public Color Color => _color;
@@ -174,10 +171,86 @@ namespace PL.Core.Models
 			throw new NotImplementedException();
 		}
 
+		private void Divide()
+		{
+			throw new NotImplementedException();
+		}
+
+		private void ChangeCommandPointer()
+		{
+			throw new NotImplementedException();
+		}
+
+
 		#endregion
+
 		public void Next()
 		{
 			throw new NotImplementedException();
+			bool canExit = false;
+
+			for (int i = 0; i < BotConstants.REPEATS_MAX_COUNT; i++)
+			{
+				switch (_genome[_currentGenomeNumber])
+				{
+					case 0:
+					{
+						Move();
+						break;
+					}
+					case 1:
+					{
+						Eat();
+						Photosynthesize();
+						break;
+					}
+					case 2:
+					{
+						Ignore();
+						break;
+					}
+					case 3:
+					{
+						CheckAround();
+						break;
+					}
+					case 4:
+					{
+						Rotate();
+						break;
+					}
+					case 5:
+					{
+						CreateChild();
+						break;
+					}
+					case 6:
+					{
+						TrySuicide();
+						break;
+					}
+					case 7:
+					{
+						StealGene();
+						break;
+					}
+					case 8:
+					{
+						StealEnergy();
+						break;
+					}
+					case 9:
+					{
+						Divide();
+						break;
+					}
+					case 10:
+					{
+						ChangeCommandPointer();
+						break;
+					}
+				}
+			}
 		}
 	}
 }
