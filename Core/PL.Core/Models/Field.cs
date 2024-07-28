@@ -81,5 +81,13 @@ namespace PL.Core.Models
 				bmp.SetPixel((int)x,(int)y, bot.Color);
 			}
 		}
+
+		public Bot this[int x, int y]
+		{
+			get => _bots.
+			Find(b => (int)b.Coords.X == x && (int)b.Coords.Y == y);
+
+			set => _bots.Add(value);
+		}
 	}
 }
