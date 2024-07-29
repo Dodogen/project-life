@@ -1,4 +1,6 @@
-﻿using Point = System.Windows.Point;
+﻿using System;
+using System.CodeDom;
+using Point = System.Windows.Point;
 
 
 namespace PL.Core.Enumerations
@@ -25,42 +27,42 @@ namespace PL.Core.Enumerations
 				case Directions.BottomRight:
 				{
 					return new Point(1, -1);
-				};
+				}
 
 				case Directions.Right:
 				{
 					return new Point(1, 0);
-				};
+				}
 
 				case Directions.TopRight:
 				{
 					return new Point(1, 1);
-				};
+				}
 
 				case Directions.Top:
 				{
 					return new Point(0, 1);
-				};
+				}
 
 				case Directions.TopLeft:
 				{
 					return new Point(-1, 1);
-				};
+				}
 
 				case Directions.Left:
 				{
 					return new Point(-1, 0);
-				};
+				}
 
 				case Directions.BottomLeft:
 				{
 					return new Point(-1, -1);
-				};
+				}
 
 				case Directions.Bottom:
 				{
 					return new Point(0, -1);
-				};
+				}
 
 				default:
 				{
@@ -68,5 +70,32 @@ namespace PL.Core.Enumerations
 				}
 			}
 		}
+
+		public static Directions RotateLeft(this Directions dir)
+		{
+			if (dir == Directions.NoDirection) return dir;
+
+			if ((int)dir == 7) return (Directions)0;
+
+			return (Directions)(int)++dir;
+		}
+
+		public static Directions RotateRight(this Directions dir)
+		{
+			if (dir == Directions.NoDirection) return dir;
+
+			if ((int)dir == 0) return (Directions)7;
+
+			return (Directions)(int)--dir;
+		}
+
+		//public static Directions RotateDirection(Directions direction, RotationDirection rotationDirection)
+		//{
+		//	if (direction == Directions.NoDirection)
+		//	{
+		//		throw new NotImplementedException();
+		//	}
+		//	return (Directions)(((int)direction + (int)rotationDirection + 8) % 8);
+
 	}
 }

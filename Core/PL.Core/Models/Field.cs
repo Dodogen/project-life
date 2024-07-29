@@ -16,6 +16,8 @@ namespace PL.Core.Models
 		private List<Bot> _bots;
 		private int currentFrame = 0;
 
+		public Bot Bots { get; set; }
+
 		public BitmapImage Map
 		{
 			get => _bmpImage.ConvertToBitmapImage();
@@ -56,7 +58,7 @@ namespace PL.Core.Models
 				{
 					if (r.Next(0, 8) == 0)
 					{
-						var bot = new Bot(new Point(j, i));
+						var bot = new Bot(this,new Point(j, i));
 						_bots.Add(bot);
 						_bmpImage.SetPixel(j,i,bot.Color);
 					}
@@ -88,6 +90,15 @@ namespace PL.Core.Models
 			Find(b => (int)b.Coords.X == x && (int)b.Coords.Y == y);
 
 			set => _bots.Add(value);
+		}
+
+		public void KillBot(Bot bot)
+		{
+			_bots.Remove(bot);
+		}
+		public void AddBot(Bot bot)
+		{
+			_bots.Add(bot);
 		}
 	}
 }
