@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_life"
         mc:Ignorable="d"
-        Title="ProjectLife" Height="720" Width="1280" Icon="Assets/earth.png"
+        Title="ProjectLife" Height="720" Width="1280"
         Loaded="MainWindow_OnLoaded"
         Background="Purple">
 
@@ -86,7 +86,7 @@
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">CPU:</TextBlock>
-                        <TextBlock Name="CpuModelTextBlock">Intel Core-i5</TextBlock>
+                        <TextBlock Name="CpuModelTextBlock">12th Gen Intel(R) Core(TM) i5-12500H</TextBlock>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
@@ -95,8 +95,8 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
-                        <TextBlock Style="{StaticResource TextBlockStyle}">Threads:</TextBlock>
-                        <TextBlock Name="ThreadsCountTextBlock">8</TextBlock>
+                        <TextBlock Style="{StaticResource TextBlockStyle}">Cores:</TextBlock>
+                        <TextBlock Name="CoresCountTextBlock">8</TextBlock>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
