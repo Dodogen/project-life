@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PL.Core
+namespace PL.Core.Utils
 {
-    public class Class1
-    {
-    }
+	public static class DeviceInfo
+	{
+
+	}
 }
