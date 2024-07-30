@@ -120,17 +120,48 @@
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Season:</TextBlock>
-                        <TextBlock Name="SeasonTextBlock">Summer (change to combobox)</TextBlock>
+                        <ComboBox 
+                            x:Name="CurrentSeasonCombobox" 
+                            SelectionChanged="CurrentSeasonCombobox_OnSelectionChanged"
+                            Grid.Column="1" 
+                            Height="20"
+                            SelectedIndex="0">
+                            <TextBlock>Summer</TextBlock>
+                            <TextBlock>Autumn</TextBlock>
+                            <TextBlock>Winter</TextBlock>
+                            <TextBlock>Spring</TextBlock>
+                        </ComboBox>
+
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Color filter:</TextBlock>
-                        <TextBlock Name="ColorFilterTextBlock">Type(change to combobox)</TextBlock>
+                        <ComboBox 
+                            x:Name="CurrentColorFilterCombobox" 
+                            SelectionChanged="CurrentColorFilterCombobox_OnSelectionChanged"
+                            Grid.Column="1" 
+                            Height="20"
+                            SelectedIndex="0">
+                            <TextBlock>Energy</TextBlock>
+                            <TextBlock>Main nutrition</TextBlock>
+                            <TextBlock>Age</TextBlock>
+                        </ComboBox>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
                         <TextBlock Style="{StaticResource TextBlockStyle}">Daytime:</TextBlock>
-                        <TextBlock Name="DaytimeTextBlock">Night(change to combobox)</TextBlock>
+                        <ComboBox 
+                            x:Name="CurrentDaytimeCombobox" 
+                            SelectionChanged="CurrentDaytimeCombobox_OnSelectionChanged"
+                            Grid.Column="1" 
+                            Height="20"
+                            SelectedIndex="0">
+                            <TextBlock>Day</TextBlock>
+                            <TextBlock>Evening</TextBlock>
+                            <TextBlock>Night</TextBlock>
+                            <TextBlock>Morning</TextBlock>
+                        </ComboBox>
+
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

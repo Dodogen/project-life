@@ -64,5 +64,20 @@ namespace project_life
 		{
 			return;
 		}
+
+		private void CurrentSeasonCombobox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			return;
+		}
+
+		private void CurrentColorFilterCombobox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			return;
+		}
+
+		private void CurrentDaytimeCombobox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			return;
+		}
 	}
 }
