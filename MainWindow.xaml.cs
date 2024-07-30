@@ -29,5 +29,40 @@ namespace project_life
 		{
 			return;
 		}
+
+		private void SaveBotButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
+
+		private void StartStopButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
+
+		private void NewFieldButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
+
+		private void SaveFieldButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
+
+		private void LoadFieldButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			return;
+		}
+
+		private void CurrentLanguageCombobox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			return;
+		}
+
+		private void MutationChanceSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			return;
+		}
 	}
 }

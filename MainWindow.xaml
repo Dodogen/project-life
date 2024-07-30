@@ -104,8 +104,18 @@
             <GroupBox Header="Parameters" Style="{StaticResource GroupBoxStyle}">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" Style="{StaticResource StackPanelRowsStyle}">
-                        <TextBlock Style="{StaticResource TextBlockStyle}">Mutation chance:</TextBlock>
-                        <TextBlock Name="MutationChanceTextBlock">1 to 5</TextBlock>
+                        <TextBlock VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">Mutation chance:</TextBlock>
+                        <Slider
+                            x:Name="MutationChanceSlider"
+                            Minimum="1"
+                            Maximum="10"
+                            TickFrequency="1"
+                            TickPlacement="None"
+                            Value="5"
+                            Width="144"
+                            Height="20"
+                            ValueChanged="MutationChanceSlider_OnValueChanged"
+                            />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"  Style="{StaticResource StackPanelRowsStyle}">
@@ -163,7 +173,8 @@
                     </StackPanel>
 
                     <Button 
-                        Name="SaveBotButton" 
+                        Name="SaveBotButton"
+                        Click="SaveBotButton_OnClick"
                         Content="Save" 
                         Width="60" 
                         Height="20"
@@ -174,10 +185,26 @@
 
             <GroupBox Header="Controls" Style="{StaticResource GroupBoxStyle}">
                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Start/Stop" Style="{StaticResource ControlButtonStyle}"/>
-                    <Button Content="New" Style="{StaticResource ControlButtonStyle}"/>
-                    <Button Content="Save" Style="{StaticResource ControlButtonStyle}"/>
-                    <Button Content="Load" Style="{StaticResource ControlButtonStyle}"/>
+                    <Button 
+                        Content="Start/Stop" 
+                        Name="StartStopButton"
+                        Click="StartStopButton_OnClick"
+                        Style="{StaticResource ControlButtonStyle}"/>
+                    <Button 
+                        Content="New" 
+                        Name="NewFieldButton"
+                        Click="NewFieldButton_OnClick"
+                        Style="{StaticResource ControlButtonStyle}"/>
+                    <Button 
+                        Content="Save" 
+                        Name="SaveFieldButton"
+                        Click="SaveFieldButton_OnClick"
+                        Style="{StaticResource ControlButtonStyle}"/>
+                    <Button 
+                        Content="Load" 
+                        Name="LoadFieldButton"
+                        Click="LoadFieldButton_OnClick"
+                        Style="{StaticResource ControlButtonStyle}"/>
                 </WrapPanel>
             </GroupBox>
 
@@ -195,6 +222,7 @@
                 </TextBlock>
                 <ComboBox 
                     x:Name="CurrentLanguageCombobox" 
+                    SelectionChanged="CurrentLanguageCombobox_OnSelectionChanged"
                     Grid.Column="1" 
                     Height="20"
                     SelectedIndex="0">
