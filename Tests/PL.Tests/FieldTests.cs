@@ -1,6 +1,6 @@
-namespace PL.Tests
+namespace PL.Core.Tests
 {
-	public class Tests
+	public class FieldTests
 	{
 		[SetUp]
 		public void Setup()
