@@ -1,6 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using Point = System.Windows.Point;
+﻿using Point = System.Windows.Point;
 
 
 namespace PL.Core.Enumerations
