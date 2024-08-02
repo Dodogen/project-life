@@ -60,7 +60,7 @@ namespace PL.Core.Models
 			_nutritionMethods = GetNutritionMethods((father._nutritionMethods).Concat(mother._nutritionMethods))
 				.ToList();
 			_color = SetColor();
-			_genome = new Genome(BotConstants.GENOME_LENGTH, father._genome, mother._genome, mutationChance);
+			_genome = new Genome(father._genome, mother._genome, mutationChance);
 			_direction = ChooseRandomDirection();
 		}
 

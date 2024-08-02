@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using PL.Core.Constants;
@@ -8,16 +9,18 @@ namespace PL.Core.Models
 {
 	public class Genome
 	{
-		private List<int> _genes;
+		private int[] _genes;
+
+		public IEnumerable<int> Genes => _genes;
 
 		public Genome(int length)
 		{
 			_genes = CreateRandomIntegerArray(length);
 		}
-		public Genome(int length, Genome g1, Genome g2, double mutationChance)
-		{
 
-			_genes = CreateMixedGenome(g1,g2).ToList();
+		public Genome(Genome g1, Genome g2, double mutationChance)
+		{
+			_genes = CreateMixedGenome(g1,g2).ToArray();
 
 			if (new Random().NextDouble() <= mutationChance)
 			{
@@ -25,14 +28,14 @@ namespace PL.Core.Models
 			}
 		}
 
-		private List<int> CreateRandomIntegerArray(int len)
+		private int[] CreateRandomIntegerArray(int len)
 		{
-			var array = new List<int>(len);
+			var array = new int[len];
 
 			for (int i = 0; i < len; i++)
 			{
 				Random r = new Random();
-				array.Add(r.Next(0, BotConstants.GENOME_LENGTH));
+				array[i] = r.Next(0, BotConstants.GENOME_LENGTH);
 			}
 
 			return array;
@@ -40,7 +43,7 @@ namespace PL.Core.Models
 
 		private IEnumerable<int> CreateMixedGenome(Genome g1, Genome g2)
 		{
-			var len = g1._genes.Count;
+			var len = g1._genes.Length;
 
 			var gens1 = new List<int>(g1._genes);
 			var gens2 = new List<int>(g2._genes);
@@ -50,13 +53,16 @@ namespace PL.Core.Models
 
 		public void MutateGene()
 		{
-			_genes[new Random().Next(0, BotConstants.GENOME_LENGTH)] = new Random().Next(0, BotConstants.GENOME_LENGTH);
+			int mutatedIndex = new Random().Next(0, this._genes.Length);
+			int newGene = new Random().Next(0, BotConstants.GENOME_LENGTH);
+
+			_genes.SetValue(newGene, mutatedIndex);
 		}
 
 		public int this[int i]
 		{
-			get => _genes[i % _genes.Count];
-			set => _genes[i % _genes.Count] = value;
+			get => _genes[i % _genes.Length];
+			set => _genes[i % _genes.Length] = value;
 		} 
 	}
 }
