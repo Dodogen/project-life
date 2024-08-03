@@ -1,4 +1,3 @@
-using PL.Core.Extensions;
 using PL.Core.Models;
 
 namespace PL.Core.Tests

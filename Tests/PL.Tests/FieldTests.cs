@@ -1,16 +1,17 @@
+using System.Drawing;
+using PL.Core.Models;
+using PL.Core.Extensions;
+
 namespace PL.Core.Tests
 {
 	public class FieldTests
 	{
-		[SetUp]
-		public void Setup()
-		{
-		}
 
 		[Test]
-		public void Test1()
+		public void AddBotOnField_BotAdded()
 		{
-			Assert.Pass();
+			Bitmap bmp = new Bitmap(100, 100);
+			Field f = new Field(bmp.ConvertToBitmapImage());
 		}
 	}
 }

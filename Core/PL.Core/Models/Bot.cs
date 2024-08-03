@@ -124,6 +124,7 @@ namespace PL.Core.Models
 			return source.PickRandom(len);
 		}
 
+
 		#region Bot commands
 
 		private Directions ChooseRandomDirection()
@@ -209,7 +210,6 @@ namespace PL.Core.Models
 
 			return points;
 		}
-
 
 		private void Rotate()
 		{

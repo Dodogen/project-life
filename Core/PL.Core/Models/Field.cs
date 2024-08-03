@@ -96,6 +96,7 @@ namespace PL.Core.Models
 		{
 			_bots.Remove(bot);
 		}
+		
 		public void AddBot(Bot bot)
 		{
 			_bots.Add(bot);

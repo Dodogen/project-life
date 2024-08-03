@@ -1,3 +1,5 @@
+using PL.Core.Models;
+
 namespace PL.Core.Tests
 {
 	public class BotTests
@@ -8,9 +10,8 @@ namespace PL.Core.Tests
 		}
 
 		[Test]
-		public void Test1()
+		public void CreatedBot_SuccessfullyCreated()
 		{
-			Assert.Pass();
 		}
 	}
 }
