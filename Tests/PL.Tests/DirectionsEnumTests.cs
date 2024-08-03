@@ -32,14 +32,12 @@ namespace PL.Core.Tests
 		[TestCase(Directions.Top, Directions.TopLeft)]
 		[TestCase(Directions.TopLeft, Directions.Left)]
 		[TestCase(Directions.Left, Directions.BottomLeft)]
-		[TestCase(Directions.BottomLeft, Directions.BottomLeft)]
 		[TestCase(Directions.BottomLeft, Directions.Bottom)]
+		[TestCase(Directions.Bottom, Directions.BottomRight)]
 		public void RotateLeft_Rotate_SuccessfullyRotated(Directions start, Directions rotated)
 		{
-			Assert.That(true,
-				Enum.GetName(start) + " rotated to " + Enum.GetName(rotated),
-				start.RotateLeft(),
-				rotated);
+			Assert.That(start.RotateLeft() == rotated,
+				Enum.GetName(start) + " rotated to " + Enum.GetName(rotated));
 		}
 
 
@@ -49,15 +47,13 @@ namespace PL.Core.Tests
 		[TestCase(Directions.TopRight, Directions.Right)]
 		[TestCase(Directions.Top, Directions.TopRight)]
 		[TestCase(Directions.TopLeft, Directions.Top)]
-		[TestCase(Directions.Left, Directions.BottomLeft)]
+		[TestCase(Directions.Left, Directions.TopLeft)]
 		[TestCase(Directions.BottomLeft, Directions.Left)]
 		[TestCase(Directions.Bottom, Directions.BottomLeft)]
 		public void RotateRight_Rotate_SuccessfullyRotated(Directions start, Directions rotated)
 		{
-			Assert.That(true,
-				Enum.GetName(start) + " rotated to " + Enum.GetName(rotated),
-				start.RotateRight(),
-				rotated);
+			Assert.That(start.RotateRight() == rotated,
+				Enum.GetName(start) + " rotated to " + Enum.GetName(rotated));
 		}
 
 	}
