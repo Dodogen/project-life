@@ -27,18 +27,19 @@ namespace PL.Core.Tests
 		[Test]
 		public void MutateGene_CheckIfRandomGenomeElementChanged_Changed()
 		{
-			Genome g1 = new Genome(10);
-			var g1Genes = new int[g1.Genes.Count()];
-			Array.Copy(g1.Genes.ToArray(), g1Genes, g1Genes.Length);
+			for (int i = 0; i < 10000000; i++)
+			{
+				Genome g1 = new Genome(10);
+				var g1Genes = new int[g1.Genes.Count()];
+				Array.Copy(g1.Genes.ToArray(), g1Genes, g1Genes.Length);
 
-			g1.MutateGene();
-			var g1MutatedGenes = g1.Genes;
+				g1.MutateGene();
 
-			Assert.That(!g1Genes.SequenceEqual(g1MutatedGenes),
-				"mutated and original genes are equal\n"+
-				$"original = {string.Join(", ", g1Genes)}\n" +
-				$"mutated  = {string.Join(", ", g1MutatedGenes)}\n");
-
+				Assert.That(!g1Genes.SequenceEqual(g1.Genes),
+					"mutated and original genes are equal\n" +
+					$"original = {string.Join(", ", g1Genes)}\n" +
+					$"mutated  = {string.Join(", ", g1.Genes)}\n");
+			}
 		}
 	}
 }

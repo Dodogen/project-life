@@ -54,9 +54,17 @@ namespace PL.Core.Models
 		public void MutateGene()
 		{
 			int mutatedIndex = new Random().Next(0, this._genes.Length);
-			int newGene = new Random().Next(0, BotConstants.GENOME_LENGTH);
 
-			_genes.SetValue(newGene, mutatedIndex);
+			while (true)
+			{
+				int newGene = new Random().Next(0, BotConstants.GENOME_LENGTH);
+				if (newGene != _genes[mutatedIndex])
+				{
+					_genes.SetValue(newGene, mutatedIndex);
+					return;
+				}
+			}
+
 		}
 
 		public int this[int i]
