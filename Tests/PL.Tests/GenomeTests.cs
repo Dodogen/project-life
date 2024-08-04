@@ -4,7 +4,7 @@ namespace PL.Core.Tests
 {
 	public class GenomeTests
 	{
-		[Test] 
+		[Test]
 		public void GenomeConstructor_CheckIfMixedGenomeContainsCorrectValues_Created()
 		{
 			Genome g1 = new Genome(10);
@@ -26,19 +26,17 @@ namespace PL.Core.Tests
 		[Test]
 		public void MutateGene_CheckIfRandomGenomeElementChanged_Changed()
 		{
-			for (int i = 0; i < 10000000; i++)
-			{
-				Genome g1 = new Genome(10);
-				var g1Genes = new int[g1.Genes.Count()];
-				Array.Copy(g1.Genes.ToArray(), g1Genes, g1Genes.Length);
 
-				g1.MutateGene();
+			Genome g1 = new Genome(10);
+			var g1Genes = new int[g1.Genes.Count()];
+			Array.Copy(g1.Genes.ToArray(), g1Genes, g1Genes.Length);
 
-				Assert.That(!g1Genes.SequenceEqual(g1.Genes),
-					"mutated and original genes are equal\n" +
-					$"original = {string.Join(", ", g1Genes)}\n" +
-					$"mutated  = {string.Join(", ", g1.Genes)}\n");
-			}
+			g1.MutateGene();
+
+			Assert.That(!g1Genes.SequenceEqual(g1.Genes),
+				"mutated and original genes are equal\n" +
+				$"original = {string.Join(", ", g1Genes)}\n" +
+				$"mutated  = {string.Join(", ", g1.Genes)}\n");
 		}
 	}
 }

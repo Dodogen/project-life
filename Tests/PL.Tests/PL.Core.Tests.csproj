@@ -25,9 +25,6 @@
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />
-    <Using Include="System.Windows.Point">
-      <Static>True</Static>
-    </Using>
   </ItemGroup>
 
 </Project>

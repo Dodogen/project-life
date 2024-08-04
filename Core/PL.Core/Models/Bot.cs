@@ -23,14 +23,23 @@ namespace PL.Core.Models
 
 		#region properties
 
-		public Coordinates2D Coords => _coordinates;
-
+		public Coordinates2D Coords
+		{
+			get => _coordinates;
+			set
+			{
+				if (value.X < 0 || value.Y < 0)
+				{
+					throw new ArgumentException("coordinates can not be less than 0");
+				}
+				_coordinates = value;
+			}
+		}
 		public uint Energy
 		{
 			get => _energy;
 			set => _energy = value.Clamp((uint)0,(uint)100);
 		}
-
 		public uint Age => _age;
 		public Color Color => _color;
 		public Coordinates2D MovementDirection => _direction.Value();
@@ -41,7 +50,7 @@ namespace PL.Core.Models
 		public Bot(Field field, Coordinates2D coords) // create default "plant"-bot
 		{
 			_field = field;
-			_coordinates = coords;
+			Coords = coords;
 			_energy = (uint)(new Random().Next(0, 100));
 			_nutritionMethods = GetNutritionMethods(new[] { NutritionMethods.Photosynthesis }).ToList();
 			_color = SetColor();
@@ -128,7 +137,7 @@ namespace PL.Core.Models
 
 		private Directions ChooseRandomDirection()
 		{
-			throw new NotImplementedException();
+			return (Directions)new Random().Next(0, 9);
 		}
 		
 		private void Move()

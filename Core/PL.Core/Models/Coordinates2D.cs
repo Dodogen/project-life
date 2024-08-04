@@ -20,5 +20,15 @@
 		{
 			return new Coordinates2D(p1.X - p2.X, p1.Y - p2.Y);
 		}
+
+		public static bool operator ==(Coordinates2D p1, Coordinates2D p2)
+		{
+			return p1.X == p2.X && p1.Y == p2.Y;
+		}
+
+		public static bool operator !=(Coordinates2D p1, Coordinates2D p2)
+		{
+			return !(p1 == p2);
+		}
 	}
 }
