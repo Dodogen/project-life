@@ -58,6 +58,7 @@
     <Compile Include="Extensions\MathExt.cs" />
     <Compile Include="Extensions\PointExt.cs" />
     <Compile Include="Models\Bot.cs" />
+    <Compile Include="Models\Coordinates2D.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\Genome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
