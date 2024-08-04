@@ -5,7 +5,6 @@ using PL.Core.Constants;
 using PL.Core.Enumerations;
 using PL.Core.Extensions;
 using Color = System.Drawing.Color;
-using Point = System.Windows.Point;
 
 
 namespace PL.Core.Models
@@ -13,7 +12,7 @@ namespace PL.Core.Models
 	public class Bot
 	{
 		private Field _field;
-		private Point _coordinates;
+		private Coordinates2D _coordinates;
 		private uint _energy; // gen randomly from 0 to 100
 		private uint _age = 0; // 0 from start
 		private Color _color; // or green on mixed from parents
@@ -24,7 +23,7 @@ namespace PL.Core.Models
 
 		#region properties
 
-		public Point Coords => _coordinates;
+		public Coordinates2D Coords => _coordinates;
 
 		public uint Energy
 		{
@@ -34,12 +33,12 @@ namespace PL.Core.Models
 
 		public uint Age => _age;
 		public Color Color => _color;
-		public Point MovementDirection => _direction.Value();
+		public Coordinates2D MovementDirection => _direction.Value();
 		public IEnumerable<NutritionMethods> Nutrition => _nutritionMethods;
 
 		#endregion
 
-		public Bot(Field field, Point coords) // create default "plant"-bot
+		public Bot(Field field, Coordinates2D coords) // create default "plant"-bot
 		{
 			_field = field;
 			_coordinates = coords;
@@ -134,7 +133,7 @@ namespace PL.Core.Models
 		
 		private void Move()
 		{
-			_coordinates.Add(_direction.Value());
+			_coordinates += _direction.Value();
 			_energy -= BotConstants.MOVEMENT_ENERGY_LOSES;
 		}
 
@@ -180,7 +179,7 @@ namespace PL.Core.Models
 				for (int x = -1; x < 2; x++)
 				{
 					if (x == 0 && y == 0) continue;
-					var checkedBot = _field[(int)_coordinates.X + x, (int)_coordinates.Y + y];
+					var checkedBot = _field[_coordinates.X + x, _coordinates.Y + y];
 					if (!checkedBot.Equals(default(Bot)))
 					{
 						bots.Add(checkedBot);
@@ -191,19 +190,19 @@ namespace PL.Core.Models
 			return bots;
 		}
 
-		private List<Point> CheckFreeSpaceAround()
+		private List<Coordinates2D> CheckFreeSpaceAround()
 		{
-			var points = new List<Point>();
+			var points = new List<Coordinates2D>();
 
 			for (int y = -1; y < 2; y++)
 			{
 				for (int x = -1; x < 2; x++)
 				{
 					if (x == 0 && y == 0) continue;
-					var checkedPoint = _field[(int)_coordinates.X + x, (int)_coordinates.Y + y];
+					var checkedPoint = _field[_coordinates.X + x, _coordinates.Y + y];
 					if (checkedPoint.Equals(default(Bot)))
 					{
-						points.Add(new Point((int)_coordinates.X + x, (int)_coordinates.Y + y));
+						points.Add(new Coordinates2D(_coordinates.X + x, _coordinates.Y + y));
 					}
 				}
 			}
