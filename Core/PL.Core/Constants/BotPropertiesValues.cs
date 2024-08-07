@@ -1,10 +1,10 @@
 ﻿namespace PL.Core.Constants
 {
-	public static class BotConstants
+	public static class BotPropertiesValues
 	{
 		public const int GENOME_LENGTH = 32;
 		public const int REPEATS_MAX_COUNT = 5;
-		public const double MUTATION_CHANCE = 0.125;
+		public static double MUTATION_CHANCE = 0.125;
 
 		public const int MOVEMENT_ENERGY_LOSES = 10;
 		public const int MUTATION_ENERGY_LOSES = 30;

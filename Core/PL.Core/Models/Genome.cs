@@ -32,7 +32,7 @@ namespace PL.Core.Models
 			for (int i = 0; i < len; i++)
 			{
 				Random r = new Random();
-				array.Add(r.Next(0, BotConstants.GENOME_LENGTH));
+				array.Add(r.Next(0, BotPropertiesValues.GENOME_LENGTH));
 			}
 
 			return array;
@@ -50,7 +50,7 @@ namespace PL.Core.Models
 
 		public void MutateGene()
 		{
-			_genes[new Random().Next(0, BotConstants.GENOME_LENGTH)] = new Random().Next(0, BotConstants.GENOME_LENGTH);
+			_genes[new Random().Next(0, BotPropertiesValues.GENOME_LENGTH)] = new Random().Next(0, BotPropertiesValues.GENOME_LENGTH);
 		}
 
 		public int this[int i]

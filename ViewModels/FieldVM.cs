@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project_life.ViewModels
 {
-	internal class FieldVM
+	public class FieldVM : BaseViewModel
 	{
 	}
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace project_life.ViewModels
 {
-	internal class BotVM
+	public class BotVM : BaseViewModel
 	{
+
 	}
 }

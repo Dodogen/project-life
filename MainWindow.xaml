@@ -4,10 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_life"
+        xmlns:viewModels="clr-namespace:project_life.ViewModels"
         mc:Ignorable="d"
         Title="ProjectLife" Height="720" Width="1280"
         Loaded="MainWindow_OnLoaded"
         Background="Purple">
+
+    <Window.DataContext>
+
+        <viewModels:BotConstantsViewModel/>
+
+    </Window.DataContext>
 
     <Window.Resources>
 
@@ -145,11 +152,11 @@
                        
                         <Slider
                             x:Name="MutationChanceSlider"
-                            Minimum="1"
-                            Maximum="10"
+                            Minimum="0"
+                            Maximum="1"
                             TickFrequency="1"
                             TickPlacement="None"
-                            Value="5"
+                            Value="{Binding MutationChance}"
                             Width="144"
                             Height="20"
                             ValueChanged="MutationChanceSlider_OnValueChanged"

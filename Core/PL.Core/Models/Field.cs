@@ -16,6 +16,8 @@ namespace PL.Core.Models
 		private List<Bot> _bots;
 		private int currentFrame = 0;
 
+		//!TODO add season, daytime, color filter
+
 		public Bot Bots { get; set; }
 
 		public BitmapImage Map

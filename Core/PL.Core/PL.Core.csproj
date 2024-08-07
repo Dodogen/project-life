@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\AppConstants.cs" />
-    <Compile Include="Constants\BotConstants.cs" />
+    <Compile Include="Constants\BotPropertiesValues.cs" />
     <Compile Include="Constants\WorldConstants.cs" />
     <Compile Include="Enumerations\BotTypes.cs" />
     <Compile Include="Enumerations\Directions.cs" />
