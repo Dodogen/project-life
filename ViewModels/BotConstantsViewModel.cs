@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows;
 using PL.Core.Constants;
-using static PL.Core.Constants.BotPropertiesValues;
 
 namespace project_life.ViewModels
 {
@@ -22,5 +17,7 @@ namespace project_life.ViewModels
 				OnPropertyChanged("MutationChance");
 			}
 		}
+
+
 	}
 }
