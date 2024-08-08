@@ -34,7 +34,7 @@ namespace PL.Core.Models
 			for (int i = 0; i < len; i++)
 			{
 				Random r = new Random();
-				array[i] = r.Next(0, BotConstants.GENOME_LENGTH);
+				array[i] = r.Next(0, BotPropertiesValues.GENOME_LENGTH);
 			}
 
 			return array;
@@ -56,7 +56,7 @@ namespace PL.Core.Models
 
 			while (true)
 			{
-				int newGene = new Random().Next(0, BotConstants.GENOME_LENGTH);
+				int newGene = new Random().Next(0, BotPropertiesValues.GENOME_LENGTH);
 				if (newGene != _genes[mutatedIndex])
 				{
 					_genes.SetValue(newGene, mutatedIndex);

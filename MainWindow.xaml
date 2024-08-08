@@ -154,7 +154,7 @@
                             x:Name="MutationChanceSlider"
                             Minimum="0"
                             Maximum="1"
-                            TickFrequency="1"
+                            TickFrequency="0.005"
                             TickPlacement="None"
                             Value="{Binding MutationChance}"
                             Width="144"
