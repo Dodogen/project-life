@@ -143,7 +143,7 @@ namespace PL.Core.Models
 		private void Move()
 		{
 			_coordinates += _direction.Value();
-			_energy -= BotConstants.MOVEMENT_ENERGY_LOSES;
+			_energy -= BotPropertiesValues.MOVEMENT_ENERGY_LOSES;
 		}
 
 		private void Mutate()
