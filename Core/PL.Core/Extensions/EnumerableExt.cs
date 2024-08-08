@@ -20,5 +20,13 @@ namespace PL.Core.Extensions
 		{
 			return source.OrderBy(x => Guid.NewGuid());
 		}
+
+		public static IEnumerable<T> ShowValues<T>(this IEnumerable<T> source)
+		{
+			foreach (var elem in source)
+			{
+				yield return elem;
+			}
+		}
 	}
 }
