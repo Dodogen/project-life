@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project life", "project life.csproj", "{57ACAAB9-14E1-4E76-A145-00AC9D4BA190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL.Tests", "Tests\PL.Tests\PL.Tests.csproj", "{7F330DB2-77A9-4036-9F15-B1B4B67690E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL.Core.Tests", "Tests\PL.Tests\PL.Core.Tests.csproj", "{7F330DB2-77A9-4036-9F15-B1B4B67690E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL.Core", "Core\PL.Core\PL.Core.csproj", "{38CCC7AB-C9D9-4E2D-8A6F-266546F4F141}"
 EndProject

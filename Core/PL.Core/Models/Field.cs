@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Media.Imaging;
 using PL.Core.Constants;
 using PL.Core.Extensions;
-using Point = System.Windows.Point;
 
 namespace PL.Core.Models
 {
@@ -60,7 +59,7 @@ namespace PL.Core.Models
 				{
 					if (r.Next(0, 8) == 0)
 					{
-						var bot = new Bot(this,new Point(j, i));
+						var bot = new Bot(this,new Coordinates2D(j, i));
 						_bots.Add(bot);
 						_bmpImage.SetPixel(j,i,bot.Color);
 					}
@@ -98,6 +97,7 @@ namespace PL.Core.Models
 		{
 			_bots.Remove(bot);
 		}
+		
 		public void AddBot(Bot bot)
 		{
 			_bots.Add(bot);
