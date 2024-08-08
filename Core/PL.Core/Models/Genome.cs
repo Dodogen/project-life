@@ -63,7 +63,6 @@ namespace PL.Core.Models
 					return;
 				}
 			}
-
 		}
 
 		public int this[int i]

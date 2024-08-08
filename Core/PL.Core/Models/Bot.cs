@@ -54,7 +54,7 @@ namespace PL.Core.Models
 			_energy = (uint)(new Random().Next(0, 100));
 			_nutritionMethods = GetNutritionMethods(new[] { NutritionMethods.Photosynthesis }).ToList();
 			_color = SetColor();
-			_genome = new Genome(BotConstants.GENOME_LENGTH);
+			_genome = new Genome(BotPropertiesValues.GENOME_LENGTH);
 			_direction = ChooseRandomDirection();
 			_field = field;
 		}
@@ -148,10 +148,10 @@ namespace PL.Core.Models
 
 		private void Mutate()
 		{
-			var randomIndex = (new Random()).Next(0, BotConstants.GENOME_LENGTH);
-			var randomGeneValue = (new Random()).Next(0, BotConstants.GENOME_LENGTH);
+			var randomIndex = (new Random()).Next(0, BotPropertiesValues.GENOME_LENGTH);
+			var randomGeneValue = (new Random()).Next(0, BotPropertiesValues.GENOME_LENGTH);
 			_genome[randomIndex] = randomGeneValue;
-			_energy -= BotConstants.MUTATION_ENERGY_LOSES;
+			_energy -= BotPropertiesValues.MUTATION_ENERGY_LOSES;
 		}
 
 		private void Eat()
@@ -165,17 +165,17 @@ namespace PL.Core.Models
 				_field.KillBot(randomBot);
 			}
 
-			Energy -= BotConstants.EATING_ENERGY_LOSES;
+			Energy -= BotPropertiesValues.EATING_ENERGY_LOSES;
 		}
 
 		private void Photosynthesize()
 		{
-			Energy += BotConstants.PHOTOSYNTHESIZE_ENERGY_ADD;
+			Energy += BotPropertiesValues.PHOTOSYNTHESIZE_ENERGY_ADD;
 		}
 
 		private void Ignore()
 		{
-			Energy -= BotConstants.IGNORING_ENERGY_LOSES;
+			Energy -= BotPropertiesValues.IGNORING_ENERGY_LOSES;
 			throw new NotImplementedException();
 		}
 
@@ -231,21 +231,21 @@ namespace PL.Core.Models
 				_direction.RotateRight();
 			}
 
-			Energy -= BotConstants.ROTATION_ENERGY_LOSES;
+			Energy -= BotPropertiesValues.ROTATION_ENERGY_LOSES;
 		}
 
 		private void CreateChild(double mutationChance)
 		{
 			var parentCandidates = CheckBotsAround();
 
-			if (parentCandidates.Count != 0 && Energy >= BotConstants.BIRTH_ENERGY_LOSES)
+			if (parentCandidates.Count != 0 && Energy >= BotPropertiesValues.BIRTH_ENERGY_LOSES)
 			{
 				var otherParent = parentCandidates.PickRandom();
 
 				var childBot = new Bot(_field, otherParent, this, mutationChance);
 				_field.AddBot(childBot);
 
-				Energy -= BotConstants.BIRTH_ENERGY_LOSES;
+				Energy -= BotPropertiesValues.BIRTH_ENERGY_LOSES;
 			}
 		}
 
@@ -260,7 +260,7 @@ namespace PL.Core.Models
 		{
 			bool canExit = false;
 
-			for (int i = 0; i < BotConstants.REPEATS_MAX_COUNT; i++)
+			for (int i = 0; i < BotPropertiesValues.REPEATS_MAX_COUNT; i++)
 			{
 				switch (_genome[_currentGenomePointer])
 				{
@@ -297,7 +297,7 @@ namespace PL.Core.Models
 
 					case 24:
 					{
-						CreateChild(BotConstants.MUTATION_CHANCE);
+						CreateChild(BotPropertiesValues.MUTATION_CHANCE);
 						canExit = true;
 						break;
 					}

@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BotConstantsViewModel.cs" />
+    <Compile Include="ViewModels\BotVM.cs" />
+    <Compile Include="ViewModels\FieldVM.cs" />
+    <Compile Include="ViewModels\GenomeVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +99,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="Core\PL.Core\PL.Core.csproj">
+      <Project>{38ccc7ab-c9d9-4e2d-8a6f-266546f4f141}</Project>
+      <Name>PL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
